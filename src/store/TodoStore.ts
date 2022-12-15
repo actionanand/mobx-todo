@@ -1,5 +1,6 @@
 import { action, makeObservable, observable } from 'mobx';
 import { v4 as uuid } from 'uuid';
+// import { computed, makeAutoObservable } from 'mobx';
 
 export interface Todo {
   id: string;
@@ -9,6 +10,8 @@ export interface Todo {
 
 class TodoStore {
   list: Todo[] = [];
+
+
 
   constructor() {
     makeObservable(this, {
@@ -39,6 +42,21 @@ class TodoStore {
     this.list = this.list.filter(el => el.id !== id);
   }
 }
+
+/*
+  constructor() {
+    makeAutoObservable(this); // all properties as observable & methos as action
+  }
+*/
+
+/*
+  constructor() {
+    makeAutoObservable(this, {
+      add: computed,
+      remove: false
+    }); 
+  }
+*/
 
 /*
 // mobX using decorators
