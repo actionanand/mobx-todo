@@ -3,8 +3,15 @@ import { createContext, useContext } from 'react';
 import TodoStore from './TodoStore';
 
 const store = {
+  todos: TodoStore(),
+};
+
+/*
+// using class
+const store = {
   todos: new TodoStore(),
 };
+*/
 
 export const StoreCtx = createContext(store);
 
