@@ -30,6 +30,10 @@ const TodoStore = () => makeAutoObservable({
 
   remove(id: string) {
     this.list = this.list.filter(el => el.id !== id);
+  },
+
+  get unfinishedTodos() {
+    return this.list.filter((el: Todo) => !el.isDone);
   }
 });
 

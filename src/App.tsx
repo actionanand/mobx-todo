@@ -5,10 +5,13 @@ import { observer, useLocalObservable } from 'mobx-react-lite';
 
 import styles from './App.module.css';
 
+import { useStore } from './store';
 import TodoInput from './Todo/TodoInput';
 import TodoList from './Todo/TodoList';
 
 const App = () => {
+  const { todos } = useStore();
+
   /*
   const [todosVisible, setTodosVisible] = useState(true);
   const clickHandler = () => setTodosVisible(prevState => !prevState);
@@ -89,7 +92,7 @@ const App = () => {
       <div className={styles['todo-list-wrapper']}>
         <h2 onClick={clickHandler}>
           <span> {appUI.todosVisible ? '-' : '+'} </span>
-          Todos
+          Todos (Unfinished {todos.unfinishedTodos.length})
         </h2>
         {appUI.todosVisible && <TodoList />}
       </div>
