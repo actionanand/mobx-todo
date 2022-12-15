@@ -1,15 +1,34 @@
-import { ChangeEvent, KeyboardEvent, useState } from 'react';
+import { FormEvent } from 'react';
+// import { ChangeEvent, KeyboardEvent, useState } from 'react';
 
 import styles from './TodoInput.module.css';
 
 import TodoStore from '../../store/TodoStore';
 
 const TodoInput = ({ todos }: { todos: TodoStore }) => {
+  const handleOnSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    const formEl = e.target as HTMLFormElement;
+    const formData = new FormData(formEl);
+    const value = String(formData.get('todo-name') || '');
+
+    todos.add(value);
+    formEl.reset();
+  };
+
+  return (
+    <form onSubmit={handleOnSubmit} className={styles['todo-input-group']}>
+      <input type="text" name="todo-name" placeholder="Add your todo.." />
+      <button type="submit"> Add Todo </button>
+    </form>
+  );
+
+  /*
   const [newTodo, setNewTodo] = useState('');
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) =>
     setNewTodo(e.target.value);
-
+  
   const handleButtonClick = () => {
     todos.add(newTodo);
     setNewTodo('');
@@ -21,18 +40,7 @@ const TodoInput = ({ todos }: { todos: TodoStore }) => {
       handleButtonClick();
     }
   };
-
-  return (
-    <div className={styles['todo-input-group']}>
-      <input
-        type="text"
-        value={newTodo}
-        onChange={handleInputChange}
-        onKeyDown={handleEnterBtn}
-      />
-      <button onClick={handleButtonClick}> Add Todo </button>
-    </div>
-  );
+  */
 };
 
 export default TodoInput;
