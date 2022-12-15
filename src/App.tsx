@@ -35,6 +35,18 @@ const App = () => {
 
   const clickHandler = () => appUI.toggleTodoVisibility();
 
+  /*
+  // using `primitive` value as observale. you can use `box` to achieve this.
+  // it's advised to use `useState` when it comes to `primitive`
+  const todosVisible = observable.box(true);
+  todosVisible.observe_(({ newValue }) => {
+    console.log('New primitive value is ', newValue);
+  });
+  todosVisible.set(false);
+  todosVisible.set(true);
+  todosVisible.set(false);
+  */
+
   return (
     <div className="App">
       <TodoInput />
