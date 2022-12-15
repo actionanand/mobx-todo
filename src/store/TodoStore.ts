@@ -16,7 +16,7 @@ class TodoStore {
       add: action,
       remove: action,
       toggle: action
-    })
+    });
   }
 
   add(title: string) {
@@ -39,5 +39,40 @@ class TodoStore {
     this.list = this.list.filter(el => el.id !== id);
   }
 }
+
+/*
+// mobX using decorators
+class TodoStore {
+  @observable
+  list: Todo[] = [];
+
+  constructor() {
+    makeObservable(this);
+  }
+
+  @action
+  add(title: string) {
+    if (title.trim().length < 3 || title.trim().length > 20) {
+      return;
+    }
+
+    this.list.push({
+      id: uuid(),
+      title,
+      isDone: false
+    });
+  }
+
+  @action
+  toggle(todo: Todo) {
+    todo.isDone = !todo.isDone;
+  }
+
+  @action
+  remove(id: string) {
+    this.list = this.list.filter(el => el.id !== id);
+  }
+}
+*/
 
 export default TodoStore;
