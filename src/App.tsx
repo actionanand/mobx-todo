@@ -1,6 +1,6 @@
-// import { useState } from 'react';
+// import { useState, useEffect } from 'react';
 
-// import { observable, runInAction } from 'mobx';
+// import { autorun, reaction, observable, runInAction, when } from 'mobx';
 import { observer, useLocalObservable } from 'mobx-react-lite';
 
 import styles from './App.module.css';
@@ -27,6 +27,81 @@ const App = () => {
       },
     }),
   );
+  */
+
+  /*
+  // `autorun`
+  useEffect(() => {
+    const dispose = autorun(
+      () => {
+        // `autorun` won't run if object doesn't change
+        console.log(todos.list.length);
+        throw new Error('An error has occurred!');
+      },
+      {
+        delay: 1000,
+        onError: err => console.info(err.message),
+      },
+    );
+
+    return () => {
+      dispose();
+    };
+  }, []);
+  */
+
+  /* 
+  // reaction
+  useEffect(() => {
+    const dispose = reaction(
+      () => {
+        return {
+          length: todos.list.length,
+          unfinishedTodos: todos.unfinishedTodos,
+        };
+      },
+      (newValue, oldValue) => {
+        console.log(newValue.length, newValue, oldValue);
+        throw new Error('An error has occurred!');
+      },
+      {
+        delay: 1000,
+        onError: err => console.info(err.message),
+      },
+    );
+
+    return () => {
+      dispose();
+    };
+  }, []);
+  */
+
+  /*
+  // `when` reaction. It'll run one time only.
+  useEffect(() => {
+    const displose = when(
+      () => !appUI.todosVisible,
+      () => {
+        console.log('clean up!');
+      },
+    );
+
+    return () => {
+      displose();
+    };
+  }, []);
+  */
+
+  /*
+  // `when` reaction. It'll run one time only.
+  useEffect(() => {
+    const promiseWhen = when(() => !appUI.todosVisible);
+
+    promiseWhen.then(() => {
+      console.log('clean up!');
+    });
+
+  }, []);
   */
 
   const appUI = useLocalObservable(() => ({
