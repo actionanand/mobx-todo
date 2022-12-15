@@ -3,9 +3,11 @@ import { FormEvent } from 'react';
 
 import styles from './TodoInput.module.css';
 
-import TodoStore from '../../store/TodoStore';
+import { useStore } from '../../store';
 
-const TodoInput = ({ todos }: { todos: TodoStore }) => {
+const TodoInput = () => {
+  const { todos } = useStore();
+
   const handleOnSubmit = (e: FormEvent) => {
     e.preventDefault();
     const formEl = e.target as HTMLFormElement;

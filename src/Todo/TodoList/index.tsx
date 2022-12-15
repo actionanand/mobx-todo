@@ -2,9 +2,11 @@ import { observer } from 'mobx-react-lite';
 
 import styles from './TodoList.module.css';
 
-import TodoStore, { Todo } from '../../store/TodoStore';
+import { useStore } from '../../store';
+import { Todo } from '../../store/TodoStore';
 
-const TodoList = ({ todos }: { todos: TodoStore }) => {
+const TodoList = () => {
+  const { todos } = useStore();
   const toggleTodoHandler = (todo: Todo) => () => todos.toggle(todo);
   const removeTodoHandler = (id: string) => () => todos.remove(id);
 
