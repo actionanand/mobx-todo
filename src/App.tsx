@@ -1,6 +1,6 @@
 // import { useState } from 'react';
 
-// import { observable } from 'mobx';
+// import { observable, runInAction } from 'mobx';
 import { observer, useLocalObservable } from 'mobx-react-lite';
 
 import styles from './App.module.css';
@@ -34,6 +34,42 @@ const App = () => {
   }));
 
   const clickHandler = () => appUI.toggleTodoVisibility();
+
+  /*
+  // Running async code (async action)
+  const appUI = useLocalObservable(() => ({
+    todosVisible: true,
+    loading: false,
+    toggleTodoVisibility() {
+      this.loading = true;
+
+      new Promise(resolve => setTimeout(() => resolve(void 0), 1000)).then(
+        () => {
+          runInAction(() => {
+            this.loading = false;
+            this.todosVisible = !this.todosVisible;
+          });
+        },
+      );
+    },
+  }));
+  */
+
+  /*
+  // Running async code (async action) -> using generator function
+  const appUI = useLocalObservable(() => ({
+    todosVisible: true,
+    loading: false,
+    *toggleTodoVisibility() {
+      this.loading = true;
+
+      yield new Promise(resolve => setTimeout(() => resolve(void 0), 1000));
+
+      this.loading = false;
+      this.todosVisible = !this.todosVisible;
+    },
+  }));
+  */
 
   /*
   // using `primitive` value as observale. you can use `box` to achieve this.
