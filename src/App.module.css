@@ -1,0 +1,7 @@
+.todo-list-wrapper {
+  margin: 5rem;
+}
+
+.todo-list-wrapper > h2:hover {
+  cursor: pointer;
+}

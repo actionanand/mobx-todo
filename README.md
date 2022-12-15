@@ -39,6 +39,21 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
+## Resources
+
+- [Asynchronous actions - mobx](https://mobx.js.org/actions.html#asynchronous-actions)
+- [You Don’t Need Redux — 3 Simple Alternatives for State Management in React](https://blog.devgenius.io/you-dont-need-redux-3-simple-alternatives-for-state-management-in-react-af1412318f3)
+- [5 Alternatives to React Redux in 2020](https://blog.bitsrc.io/redux-react-alternatives-c1733793a339)
+- [Redux Alternatives In 2021](https://blog.openreplay.com/redux-alternatives-in-2021/)
+- [How to Use Recoil for State Management in Your React Projects](https://www.freecodecamp.org/news/how-to-use-recoil-for-state-management-in-your-react-projects/)
+- [Using Recoil Instead Of Redux For State Management In React Applications.](https://blog.openreplay.com/using-recoil-instead-of-redux-for-state-management-in-react-applications/)
+- [Recoil: the Future of State Management for React?](https://www.syncfusion.com/blogs/post/recoil-the-future-of-state-management-for-react.aspx)
+- [Introducing Recoil: Simplified state management for React](https://blog.logrocket.com/simple-state-management-react-recoil/)
+- [State Management In React With MobX](https://blog.openreplay.com/state-management-in-react-with-mobx/)
+- [Introduction to MobX with React](https://blog.logrocket.com/introduction-to-mobx-with-react/)
+- [Redux vs. MobX: Which performs better?](https://blog.logrocket.com/redux-vs-mobx/)
+- [Recoil vs Redux | The Ultimate React State Management Face-Off](https://medium.com/@chandan.reddy/react-recoil-vs-redux-the-ultimate-react-state-management-face-off-188a729a70ee)
+
 ## Learn More
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
