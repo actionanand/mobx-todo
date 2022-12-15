@@ -1,5 +1,7 @@
 import { ChangeEvent, KeyboardEvent, useState } from 'react';
 
+import styles from './TodoInput.module.css';
+
 import TodoStore from '../../store/TodoStore';
 
 const TodoInput = ({ todos }: { todos: TodoStore }) => {
@@ -21,7 +23,7 @@ const TodoInput = ({ todos }: { todos: TodoStore }) => {
   };
 
   return (
-    <>
+    <div className={styles['todo-input-group']}>
       <input
         type="text"
         value={newTodo}
@@ -29,7 +31,7 @@ const TodoInput = ({ todos }: { todos: TodoStore }) => {
         onKeyDown={handleEnterBtn}
       />
       <button onClick={handleButtonClick}> Add Todo </button>
-    </>
+    </div>
   );
 };
 
