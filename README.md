@@ -42,6 +42,8 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 ## Resources
 
 - [Asynchronous actions - mobx](https://mobx.js.org/actions.html#asynchronous-actions)
+- [Using trace for debugging](https://mobx.js.org/analyzing-reactivity.html)
+- [mobX devTool](https://github.com/mobxjs/mobx-devtools)
 - [You Don’t Need Redux — 3 Simple Alternatives for State Management in React](https://blog.devgenius.io/you-dont-need-redux-3-simple-alternatives-for-state-management-in-react-af1412318f3)
 - [5 Alternatives to React Redux in 2020](https://blog.bitsrc.io/redux-react-alternatives-c1733793a339)
 - [Redux Alternatives In 2021](https://blog.openreplay.com/redux-alternatives-in-2021/)
